@@ -1,5 +1,7 @@
+import { injectable } from "inversify";
 import { Fuel } from "./Fuel";
 
+@injectable()
 export class PremiumGasoline implements Fuel {
   private name = "Premium Gasoline";
 

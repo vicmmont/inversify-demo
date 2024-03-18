@@ -1,11 +1,10 @@
 import "reflect-metadata";
 
-import setupContainer from "./setupContainer";
+import { myContainer } from "./inversify.config";
 import { Vehicle } from "./entities/vehicle/Vehicle";
-import TYPES from "./types";
+import { TYPES } from "./types";
 
-// const container = setupContainer;
-// const myCar: Vehicle = container.resolve(TYPES.Vehicle);
+const myCar: Vehicle = myContainer.get<Vehicle>(TYPES.Vehicle);
 
 // The car is going for a ride!
 console.log(myCar.start());

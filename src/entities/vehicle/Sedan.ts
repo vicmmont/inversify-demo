@@ -1,13 +1,18 @@
+import { injectable, inject } from "inversify";
 import { Vehicle } from "./Vehicle";
 import { Engine } from "../engine/Engine";
 import { Wheel } from "../wheel/Wheel";
-import TYPES from "../../types";
+import { TYPES } from "../../types";
 
+@injectable()
 export class Sedan implements Vehicle {
   private wheel: Wheel;
   private engine: Engine;
 
-  constructor(engine: Engine, wheel: Wheel) {
+  constructor(
+    @inject(TYPES.Engine) engine: Engine,
+    @inject(TYPES.Wheel) wheel: Wheel
+  ) {
     this.engine = engine;
     this.wheel = wheel;
   }

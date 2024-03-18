@@ -1,12 +1,15 @@
+import { injectable, inject } from "inversify";
+
 import { Engine } from "./Engine";
 import { Fuel } from "../fuel/Fuel";
-import TYPES from "../../types";
+import { TYPES } from "../../types";
 
+@injectable()
 export class FourCylinderEngine implements Engine {
   private name = "4CL Engine";
   private fuel: Fuel;
 
-  constructor(fuel: Fuel) {
+  constructor(@inject(TYPES.Fuel) fuel: Fuel) {
     this.fuel = fuel;
   }
 
