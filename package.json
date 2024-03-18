@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "inversify": "6.0.2",
     "reflect-metadata": "0.2.1"
   },
   "devDependencies": {
